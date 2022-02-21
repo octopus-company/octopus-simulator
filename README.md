@@ -144,6 +144,19 @@ Double - 800 | Double | read | `ns=1;i=43801` | random change
 String - 900 | String | read | `ns=1;i=43901` | random change
 ByteString - 1100 | ByteString | read | `ns=1;i=44101` | random change
 
+## 编译
+```
+// install golangci-lint
+curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.44.2
+cp /root/go/bin/golangci-lint /usr/bin/
+make simulator generate
+make simulator mod
+make simulator lint
+make simulator build
+
+```
+
+
 ## License
 Copyright (c) 2020 [Rancher Labs, Inc.](http://rancher.com)
 
